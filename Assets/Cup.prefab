@@ -21,7 +21,6 @@ GameObject:
   - component: {fileID: 4802292707026392}
   - component: {fileID: 33070822285370702}
   - component: {fileID: 23371180249171806}
-  - component: {fileID: 136296148917839004}
   m_Layer: 0
   m_Name: Cylinder
   m_TagString: Untagged
@@ -39,7 +38,6 @@ GameObject:
   - component: {fileID: 4974746515567312}
   - component: {fileID: 33858188360576648}
   - component: {fileID: 23382445390226304}
-  - component: {fileID: 136199222800817836}
   m_Layer: 0
   m_Name: Cylinder (1)
   m_TagString: Untagged
@@ -56,8 +54,8 @@ GameObject:
   m_Component:
   - component: {fileID: 4707846360594684}
   - component: {fileID: 114741510502208038}
-  - component: {fileID: 114480097384089450}
-  - component: {fileID: 114776628245138660}
+  - component: {fileID: 136907204413199278}
+  - component: {fileID: 114065952130826144}
   m_Layer: 0
   m_Name: Cup
   m_TagString: Untagged
@@ -72,7 +70,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1324104018277804}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.3, z: 0}
+  m_LocalPosition: {x: 0.55, y: 1.3, z: -0.41}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4802292707026392}
@@ -190,7 +188,7 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1269762460932306}
   m_Mesh: {fileID: 10206, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &114480097384089450
+--- !u!114 &114065952130826144
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -198,14 +196,28 @@ MonoBehaviour:
   m_GameObject: {fileID: 1324104018277804}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cde165695e8ab5b46afa880607282e9c, type: 3}
+  m_Script: {fileID: -1862395651, guid: f70555f144d8491a825f0804e09c671c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  downHeight: 1.3
-  upHeight: 1.46
-  movingSpeed: 3
-  ball: {fileID: 0}
-  targetPosition: {x: 0, y: 0, z: 0}
+  m_Delegates:
+  - eventID: 4
+    callback:
+      m_PersistentCalls:
+        m_Calls:
+        - m_Target: {fileID: 114741510502208038}
+          m_MethodName: Check
+          m_Mode: 1
+          m_Arguments:
+            m_ObjectArgument: {fileID: 0}
+            m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+            m_IntArgument: 0
+            m_FloatArgument: 0
+            m_StringArgument: 
+            m_BoolArgument: 0
+          m_CallState: 2
+      m_TypeName: UnityEngine.EventSystems.EventTrigger+TriggerEvent, UnityEngine.UI,
+        Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  delegates: []
 --- !u!114 &114741510502208038
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -220,47 +232,19 @@ MonoBehaviour:
   downHeight: 1.3
   upHeight: 1.46
   movingSpeed: 3
+  player: {fileID: 0}
   ball: {fileID: 0}
   targetPosition: {x: 0, y: 0, z: 0}
---- !u!114 &114776628245138660
-MonoBehaviour:
+--- !u!136 &136907204413199278
+CapsuleCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1324104018277804}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cde165695e8ab5b46afa880607282e9c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  downHeight: 1.3
-  upHeight: 1.46
-  movingSpeed: 3
-  ball: {fileID: 0}
-  targetPosition: {x: 0, y: 0, z: 0}
---- !u!136 &136199222800817836
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1269762460932306}
   m_Material: {fileID: 0}
   m_IsTrigger: 0
   m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
+  m_Radius: 0.12
+  m_Height: 0.5
   m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
---- !u!136 &136296148917839004
-CapsuleCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1005826527569000}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  m_Radius: 0.5000001
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0.000000059604645, y: 0, z: -0.00000008940697}
+  m_Center: {x: 0, y: 0, z: 0}

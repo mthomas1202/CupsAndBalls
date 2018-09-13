@@ -8,6 +8,7 @@ public class Cup : MonoBehaviour {
     public float upHeight = 1.46f;
     public float movingSpeed = 3f;
 
+    public Player player;
     public GameObject ball;
 
     public Vector3 targetPosition;
@@ -46,5 +47,16 @@ public class Cup : MonoBehaviour {
            downHeight,
            transform.position.z
            );
+    }
+
+    public void Check()
+    {
+        if (player.canPick)
+        {
+            MoveUp();
+            player.canPick = false;
+            player.picked = true;
+            player.won = (ball != null);
+        }
     }
 }

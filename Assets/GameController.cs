@@ -1,20 +1,40 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class GameController : MonoBehaviour {
 
     public GameObject ball;
     public Cup[] cups;
-
+    public Player player;
+    public TextMesh infoText;
+    private float resetTimer = 3f;
 	// Use this for initialization
 	void Start () {
+        infoText.text = "Pick the Correct Cup!";
         StartCoroutine(ShuffleRoutine());
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		
+        if (player.picked)
+        {
+            if (player.won)
+            {
+                infoText.text = "You Win!";
+            }
+            else
+            {
+                infoText.text = "You Lose. Try Again.";
+            }
+
+            resetTimer -= Time.deltaTime;
+            if(resetTimer <= 0f)
+            {
+                SceneManager.LoadScene(SceneManager.GetActiveScene().name);
+            }
+        }
 	}
 
     private IEnumerator ShuffleRoutine()
@@ -42,15 +62,11 @@ public class GameController : MonoBehaviour {
             cup.MoveDown();
         }
 
-        Debug.Log("Cups Moved Down");
 
         yield return new WaitForSeconds(1f);
 
-
-        Debug.Log("For loop reached");
         for(int i = 0; i < 5; i++)
         {
-            Debug.Log("Loop: " + i);
             Cup cup1 = cups[Random.Range(0, cups.Length)];
             Cup cup2 = cup1;
 
@@ -65,5 +81,7 @@ public class GameController : MonoBehaviour {
 
             yield return new WaitForSeconds(0.74f);
         }
+
+        player.canPick = true;
     }
 }
