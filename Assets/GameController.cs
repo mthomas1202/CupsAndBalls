@@ -42,5 +42,28 @@ public class GameController : MonoBehaviour {
             cup.MoveDown();
         }
 
+        Debug.Log("Cups Moved Down");
+
+        yield return new WaitForSeconds(1f);
+
+
+        Debug.Log("For loop reached");
+        for(int i = 0; i < 5; i++)
+        {
+            Debug.Log("Loop: " + i);
+            Cup cup1 = cups[Random.Range(0, cups.Length)];
+            Cup cup2 = cup1;
+
+            while(cup2 == cup1)
+            {
+                cup2 = cups[Random.Range(0, cups.Length)];
+            }
+
+            Vector3 cup1Position = cup1.targetPosition;
+            cup1.targetPosition = cup2.targetPosition;
+            cup2.targetPosition = cup1Position;
+
+            yield return new WaitForSeconds(0.74f);
+        }
     }
 }

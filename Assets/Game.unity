@@ -276,7 +276,7 @@ GameObject:
   - component: {fileID: 443882953}
   - component: {fileID: 443882952}
   m_Layer: 0
-  m_Name: Sphere
+  m_Name: Ball
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -640,9 +640,62 @@ Prefab:
       propertyPath: m_Name
       value: Cup (1)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114480097384089450, guid: 300eed3d1ea489840a9677b0c6ba849b, type: 2}
+    - {fileID: 114776628245138660, guid: 300eed3d1ea489840a9677b0c6ba849b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 300eed3d1ea489840a9677b0c6ba849b, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1103283586 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114741510502208038, guid: 300eed3d1ea489840a9677b0c6ba849b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1103283585}
+  m_Script: {fileID: 11500000, guid: cde165695e8ab5b46afa880607282e9c, type: 3}
+--- !u!1 &1171114739
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1171114741}
+  - component: {fileID: 1171114740}
+  m_Layer: 0
+  m_Name: GameController
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1171114740
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171114739}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d3d44582235f0542b04ccfa47fe3902, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ball: {fileID: 443882951}
+  cups:
+  - {fileID: 1188805550}
+  - {fileID: 1103283586}
+  - {fileID: 1660663782}
+--- !u!4 &1171114741
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1171114739}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 10
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1188805549
 Prefab:
   m_ObjectHideFlags: 0
@@ -682,9 +735,17 @@ Prefab:
       propertyPath: m_RootOrder
       value: 6
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114776628245138660, guid: 300eed3d1ea489840a9677b0c6ba849b, type: 2}
+    - {fileID: 114480097384089450, guid: 300eed3d1ea489840a9677b0c6ba849b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 300eed3d1ea489840a9677b0c6ba849b, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1188805550 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114741510502208038, guid: 300eed3d1ea489840a9677b0c6ba849b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1188805549}
+  m_Script: {fileID: 11500000, guid: cde165695e8ab5b46afa880607282e9c, type: 3}
 --- !u!1001 &1224145956
 Prefab:
   m_ObjectHideFlags: 0
@@ -801,9 +862,17 @@ Prefab:
       propertyPath: m_Name
       value: Cup (2)
       objectReference: {fileID: 0}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 114480097384089450, guid: 300eed3d1ea489840a9677b0c6ba849b, type: 2}
+    - {fileID: 114776628245138660, guid: 300eed3d1ea489840a9677b0c6ba849b, type: 2}
   m_SourcePrefab: {fileID: 100100000, guid: 300eed3d1ea489840a9677b0c6ba849b, type: 2}
   m_IsPrefabAsset: 0
+--- !u!114 &1660663782 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 114741510502208038, guid: 300eed3d1ea489840a9677b0c6ba849b,
+    type: 2}
+  m_PrefabInternal: {fileID: 1660663781}
+  m_Script: {fileID: 11500000, guid: cde165695e8ab5b46afa880607282e9c, type: 3}
 --- !u!1001 &1827264513
 Prefab:
   m_ObjectHideFlags: 0
